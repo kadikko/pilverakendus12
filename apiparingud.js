@@ -102,7 +102,8 @@ async function handleFormSubmit(event) {
 async function listiraamatud() {
     try {
         // Fetch the books from the API
-        const responseData = await getDataAsJson("http://localhost:5000/raamatud/");
+        const responseData = await getDataAsJson("https://raamatudmikroteenus-gzadavckfrcydubb.northeurope-01.azurewebsites.net/raamatud/");
+
 
         // Find the HTML element with ID "raamatud_result"
         const resultElement = document.getElementById("raamatud_result");
@@ -115,9 +116,9 @@ async function listiraamatud() {
             // Loop through each book ID in the response and add links
             for (var raamat of responseData.raamatud) {
                 resultElement.innerHTML +=
-                    '<a href="http://localhost:5000/raamatud/' + raamat + '" download="' + raamat + '.txt" >' +
+                    '<a href="https://raamatudmikroteenus-gzadavckfrcydubb.northeurope-01.azurewebsites.net/raamatud/' + raamat + '" download="' + raamat + '.txt" >' +
                     raamat + '.txt</a> ' +
-                    '<a href="#" onclick="deleteObject(\'http://localhost:5000/raamatud/' + raamat + '\')" > [kustuta]</a>' +
+                    '<a href="#" onclick="deleteObject(\'https://raamatudmikroteenus-gzadavckfrcydubb.northeurope-01.azurewebsites.net/raamatud/' + raamat + '\')" > [kustuta]</a>' +
                     "<br />";
             }
         } else if (responseData && typeof responseData === 'object') {
@@ -127,9 +128,9 @@ async function listiraamatud() {
 
             for (var raamat of raamatud) {
                 resultElement.innerHTML +=
-                    '<a href="http://localhost:5000/raamatud/' + raamat + '" download="' + raamat + '.txt" >' +
+                    '<a href="https://raamatudmikroteenus-gzadavckfrcydubb.northeurope-01.azurewebsites.net/raamatud/' + raamat + '" download="' + raamat + '.txt" >' +
                     raamat + '.txt</a> ' +
-                    '<a href="#" onclick="deleteObject(\'http://localhost:5000/raamatud/' + raamat + '\')" > [kustuta]</a>' +
+                    '<a href="#" onclick="deleteObject(\'https://raamatudmikroteenus-gzadavckfrcydubb.northeurope-01.azurewebsites.net/raamatud/' + raamat + '\')" > [kustuta]</a>' +
                     "<br />";
             }
         } else {
